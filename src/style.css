@@ -2,8 +2,17 @@
     width: 70%;
     margin: auto;
     border: 1px solid red;
+    padding: 20px;
 }
 .leaderboard {
     display: grid;
     grid-template-columns: 60% 40%;
+}
+.refresh h3{
+    display: inline;
+}
+.list-scores ul{
+    border: 1px solid black;
+    list-style-type: none;
+    width: 70%;
 }
