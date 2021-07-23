@@ -14,5 +14,14 @@
 .list-scores ul{
     border: 1px solid black;
     list-style-type: none;
-    width: 70%;
+    width: 80%;
+    padding-left: 0;
+}
+.list-scores li:nth-child(odd) {
+    padding: 10px;
+    background-color: #fff;
+}
+.list-scores li:nth-child(even) {
+    padding: 10px;
+    background-color: rgb(207, 204, 204);
 }
