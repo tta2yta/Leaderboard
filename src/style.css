@@ -8,8 +8,9 @@
     display: grid;
     grid-template-columns: 60% 40%;
 }
-.refresh h3{
+.refresh h2{
     display: inline;
+    margin-right: 10px;
 }
 .list-scores ul{
     border: 1px solid black;
@@ -24,4 +25,23 @@
 .list-scores li:nth-child(even) {
     padding: 10px;
     background-color: rgb(207, 204, 204);
+}
+
+.add-score{
+    padding-right: 10px;
+}
+.add-score h2{
+    margin-top: 0;
+}
+
+.form-add div {
+    margin-bottom: 30px;
+}
+input[type="text"]{
+     padding: 10px 0; 
+     width: 100%;
+     }
+input[type="submit"]{ 
+    float: right; 
+    padding: 5px 15px; 
 }
