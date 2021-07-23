@@ -1,47 +1,55 @@
-.container{
-    width: 70%;
-    margin: auto;
-    border: 1px solid red;
-    padding: 20px;
-}
-.leaderboard {
-    display: grid;
-    grid-template-columns: 60% 40%;
-}
-.refresh h2{
-    display: inline;
-    margin-right: 10px;
-}
-.list-scores ul{
-    border: 1px solid black;
-    list-style-type: none;
-    width: 80%;
-    padding-left: 0;
-}
-.list-scores li:nth-child(odd) {
-    padding: 7px;
-    background-color: #fff;
-}
-.list-scores li:nth-child(even) {
-    padding: 7px;
-    background-color: rgb(207, 204, 204);
+.container {
+  width: 70%;
+  margin: auto;
+  border: 1px solid red;
+  padding: 20px;
 }
 
-.add-score{
-    padding-right: 10px;
+.leaderboard {
+  display: grid;
+  grid-template-columns: 60% 40%;
 }
-.add-score h2{
-    margin-top: 0;
+
+.refresh h2 {
+  display: inline;
+  margin-right: 10px;
+}
+
+.list-scores ul {
+  border: 1px solid black;
+  list-style-type: none;
+  width: 80%;
+  padding-left: 0;
+}
+
+.list-scores li:nth-child(odd) {
+  padding: 7px;
+  background-color: #fff;
+}
+
+.list-scores li:nth-child(even) {
+  padding: 7px;
+  background-color: rgb(207, 204, 204);
+}
+
+.add-score {
+  padding-right: 10px;
+}
+
+.add-score h2 {
+  margin-top: 0;
 }
 
 .form-add div {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
-input[type="text"]{
-     padding: 10px 0; 
-     width: 100%;
-     }
-input[type="submit"]{ 
-    float: right; 
-    padding: 5px 15px; 
+
+input[type="text"] {
+  padding: 10px 0;
+  width: 100%;
+}
+
+input[type="submit"] {
+  float: right;
+  padding: 5px 15px;
 }
