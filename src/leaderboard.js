@@ -1,0 +1,9 @@
+class LeaderBoard{
+    constructor(){
+
+    }
+
+     createGame=()=>{
+
+    }
+}
