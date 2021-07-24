@@ -2,4 +2,4 @@ import './style.css'
 import LeaderBoard from './leaderboard'
 
 const game=new LeaderBoard();
-game.createGame();
+game.createGame('my cool game');
