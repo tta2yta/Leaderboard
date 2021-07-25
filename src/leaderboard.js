@@ -26,29 +26,26 @@ export default class LeaderBoard{
     }
 
     async displayScores(){
-        console.log(this.id)
-        if (this.id !== null){
+        if (this.id !== null){  
+            const scoresList=document.getElementById("scoresList")
+            while (scoresList.firstChild) {
+                scoresList.removeChild(scoresList.firstChild)
+            }
             const url='https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/'+encodeURIComponent(this.id)+'/scores/';
-            console.log(url)
             let response= await fetch(url, {
             headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
             },
             method: "GET",
-            }).then(res =>res.json().then(data=> data));
-            console.log(response)
-
-            const scoresList=document.getElementById("scoresList")
-            const item=document.createElement("li");
-            item.className="scoresList-items"
-            item.id="scoresList-items"
+            }).then(res =>res.json().then(data=> data));           
             response.result.forEach(element => {
+                const item=document.createElement("li");
+                item.className="scoresList-items"
+                item.id="scoresList-items"
                 item.textContent=element.user + ":" + element.score
                 scoresList.appendChild(item)
-            });
-
-            
+            }); 
         }
       
     }
