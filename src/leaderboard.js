@@ -51,7 +51,39 @@ export default class LeaderBoard{
             
         }
       
+    }
 
+
+    async addScore(){
+        if (this.id !== null){
+            const url='https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/'+encodeURIComponent(this.id)+'/scores/';
+            console.log(url)
+            const newScore={
+                "user":document.getElementById('').value,
+                "score":document.getElementById('')
+            }
+            let response= await fetch(url, {
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body:JSON.stringify(newScore)
+            }).then(res =>res.json().then(data=> data));
+            console.log(response)
+
+            const scoresList=document.getElementById("scoresList")
+            const item=document.createElement("li");
+            item.className="scoresList-items"
+            item.id="scoresList-items"
+            response.result.forEach(element => {
+                item.textContent=element.name + " " + element.score
+                scoresList.appendChild(item)
+            });
+
+            
+        }
+      
     }
     
 }
