@@ -26,6 +26,7 @@ export default class LeaderBoard{
     }
 
     async displayScores(){
+        console.log(this.id)
         if (this.id !== null){
             const url='https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/'+encodeURIComponent(this.id)+'/scores/';
             console.log(url)
@@ -35,9 +36,10 @@ export default class LeaderBoard{
             'Content-Type': 'application/json'
             },
             method: "GET",
-            }).then(res =>console.log(res.json()));
-
+            }).then(res =>res.json().then(data=> data));
+            console.log(response)
         }
+      
 
     }
     
