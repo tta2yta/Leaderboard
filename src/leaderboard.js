@@ -3,7 +3,9 @@ export default class LeaderBoard{
         this.id=null
     }
     async setId(id){
-        this.id=id
+        let  tokenId=id.result.substring(id.result.indexOf(':'));
+        tokenId=tokenId.substring(tokenId.lastIndexOf(':') + 1, tokenId.lastIndexOf(' '))
+        this.id=tokenId
     }
     getId(){
         return this.id
@@ -21,6 +23,13 @@ export default class LeaderBoard{
             method: "POST",
             body: JSON.stringify(gameName)
             }).then(res =>res.json().then(data=>this.setId(data)));
+    }
+
+    displayScores(){
+        if (this.id !== null){
+
+        }
+
     }
     
 }
