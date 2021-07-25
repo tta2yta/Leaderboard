@@ -44,7 +44,7 @@ export default class LeaderBoard{
             item.className="scoresList-items"
             item.id="scoresList-items"
             response.result.forEach(element => {
-                item.textContent=element.user + " " + element.score
+                item.textContent=element.user + ":" + element.score
                 scoresList.appendChild(item)
             });
 
@@ -69,6 +69,15 @@ export default class LeaderBoard{
             method: "POST",
             body:JSON.stringify(newScore)
             }).then(res =>res.json().then(data=> data));   
+            if(response.result === 'Leaderboard score created correctly.')
+            {
+                const scoresList=document.getElementById("scoresList")
+                const item=document.createElement("li");
+                item.className="scoresList-items"
+                item.id="scoresList-items"
+                item.textContent=newScore.user + ":" + newScore.score
+                scoresList.appendChild(item)
+            }
         }
       
     }
