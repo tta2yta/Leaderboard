@@ -3,10 +3,10 @@ import LeaderBoard from './leaderboard'
 
 const game=new LeaderBoard();
 
- async function getVal(){
+ async function startGame(){
      await game.createGame('my cool game');
  }
- getVal()
+ startGame()
 
  document.getElementById("refreshbtn").addEventListener('click', ()=>{
 game.displayScores()

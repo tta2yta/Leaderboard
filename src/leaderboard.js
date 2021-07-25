@@ -49,7 +49,6 @@ export default class LeaderBoard{
                 "score":document.getElementById('score').value
             }  
             let response=await this.fetchApi(url, method="POST", newScore)
-            console.log(response)
             if(response.result === 'Leaderboard score created correctly.')
             {
                 const scoresList=document.getElementById("scoresList")
