@@ -1,3 +1,5 @@
+import { method } from "lodash";
+
 export default class LeaderBoard{
     constructor(){
         this.id=null
@@ -32,13 +34,7 @@ export default class LeaderBoard{
                 scoresList.removeChild(scoresList.firstChild)
             }
             const url='https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/'+encodeURIComponent(this.id)+'/scores/';
-            let response= await fetch(url, {
-            headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-            },
-            method: "GET",
-            }).then(res =>res.json().then(data=> data));           
+            let response=await this.fetchApi(url, method="GET")           
             response.result.forEach(element => {
                 const item=document.createElement("li");
                 item.className="scoresList-items"
@@ -57,15 +53,9 @@ export default class LeaderBoard{
             const newScore={
                 "user":document.getElementById('name').value,
                 "score":document.getElementById('score').value
-            }
-            let response= await fetch(url, {
-            headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-            },
-            method: "POST",
-            body:JSON.stringify(newScore)
-            }).then(res =>res.json().then(data=> data));   
+            }  
+            let response=await this.fetchApi(url, method="POST", newScore)
+            console.log(response)
             if(response.result === 'Leaderboard score created correctly.')
             {
                 const scoresList=document.getElementById("scoresList")
@@ -77,6 +67,19 @@ export default class LeaderBoard{
             }
         }
       
+    }
+
+   async fetchApi(url, method, jsonBody=null){
+        let response= await fetch(url, {
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+            method: method,
+            body:jsonBody!==null? JSON.stringify(jsonBody) : String.empty
+            }).then(res =>res.json().then(data=> data));
+            return response;   
+
     }
     
 }
