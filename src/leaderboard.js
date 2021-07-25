@@ -5,7 +5,7 @@ export default class LeaderBoard{
     async setId(id){
         let  tokenId=id.result.substring(id.result.indexOf(':'));
         tokenId=tokenId.substring(tokenId.lastIndexOf(':') + 1, tokenId.lastIndexOf(' '))
-        this.id=tokenId
+        this.id=tokenId.trim();
     }
     getId(){
         return this.id
@@ -25,8 +25,17 @@ export default class LeaderBoard{
             }).then(res =>res.json().then(data=>this.setId(data)));
     }
 
-    displayScores(){
+    async displayScores(){
         if (this.id !== null){
+            const url='https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/'+encodeURIComponent(this.id)+'/scores/';
+            console.log(url)
+            let response= await fetch(url, {
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+            method: "GET",
+            }).then(res =>console.log(res.json()));
 
         }
 
