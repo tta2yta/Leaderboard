@@ -17,14 +17,8 @@ export default class LeaderBoard{
          const gameName={name:name}
          let tokenId="";
          const url='https://us-central1-js-capstone-backend.cloudfunctions.net/api/games';
-            let response= await fetch(url, {
-            headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-            },
-            method: "POST",
-            body: JSON.stringify(gameName)
-            }).then(res =>res.json().then(data=>this.setId(data)));
+            let response=await this.fetchApi(url, method="POST", gameName)
+            this.setId(response) 
     }
 
     async displayScores(){
