@@ -38,6 +38,17 @@ export default class LeaderBoard{
             method: "GET",
             }).then(res =>res.json().then(data=> data));
             console.log(response)
+
+            const scoresList=document.getElementById("scoresList")
+            const item=document.createElement("li");
+            item.className="scoresList-items"
+            item.id="scoresList-items"
+            response.result.forEach(element => {
+                item.textContent=element.name + " " + element.score
+                scoresList.appendChild(item)
+            });
+
+            
         }
       
 
