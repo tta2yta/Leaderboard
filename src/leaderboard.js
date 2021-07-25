@@ -44,7 +44,7 @@ export default class LeaderBoard{
             item.className="scoresList-items"
             item.id="scoresList-items"
             response.result.forEach(element => {
-                item.textContent=element.name + " " + element.score
+                item.textContent=element.user + " " + element.score
                 scoresList.appendChild(item)
             });
 
@@ -57,10 +57,9 @@ export default class LeaderBoard{
     async addScore(){
         if (this.id !== null){
             const url='https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/'+encodeURIComponent(this.id)+'/scores/';
-            console.log(url)
             const newScore={
-                "user":document.getElementById('').value,
-                "score":document.getElementById('')
+                "user":document.getElementById('name').value,
+                "score":document.getElementById('score').value
             }
             let response= await fetch(url, {
             headers: {
@@ -69,19 +68,7 @@ export default class LeaderBoard{
             },
             method: "POST",
             body:JSON.stringify(newScore)
-            }).then(res =>res.json().then(data=> data));
-            console.log(response)
-
-            const scoresList=document.getElementById("scoresList")
-            const item=document.createElement("li");
-            item.className="scoresList-items"
-            item.id="scoresList-items"
-            response.result.forEach(element => {
-                item.textContent=element.name + " " + element.score
-                scoresList.appendChild(item)
-            });
-
-            
+            }).then(res =>res.json().then(data=> data));   
         }
       
     }

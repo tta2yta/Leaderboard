@@ -11,3 +11,8 @@ const game=new LeaderBoard();
  document.getElementById("refreshbtn").addEventListener('click', ()=>{
 game.displayScores()
  }, false)
+
+ document.getElementById("addscorebtn").addEventListener('click', ()=>{
+    game.addScore()
+     }, false)
+ 
