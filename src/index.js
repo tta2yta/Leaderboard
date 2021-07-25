@@ -2,4 +2,10 @@ import './style.css'
 import LeaderBoard from './leaderboard'
 
 const game=new LeaderBoard();
-game.createGame('my cool game');
+
+ async function getVal(){
+     await game.createGame('my cool game');
+      console.log(game.getId())
+ }
+
+ getVal()
