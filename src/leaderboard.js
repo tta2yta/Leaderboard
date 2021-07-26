@@ -6,7 +6,8 @@ export default class LeaderBoard {
   async setId(id) {
     let tokenId = id.result.substring(id.result.indexOf(':'));
     tokenId = tokenId.substring(tokenId.lastIndexOf(':') + 1, tokenId.lastIndexOf(' '));
-    this.id = tokenId.trim();
+    this.id = tokenId + "mm";
+
   }
 
   getId() {
@@ -40,12 +41,15 @@ export default class LeaderBoard {
 
   async addScore() {
     if (this.id !== null) {
+        this.id=''
+        console.log(this.id)
       const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${encodeURIComponent(this.id)}/scores/`;
       const newScore = {
         user: document.getElementById('name').value,
         score: document.getElementById('score').value,
       };
       const response = await this.fetchApi(url, 'POST', newScore);
+      console.log(response)
       if (response.result === 'Leaderboard score created correctly.') {
         const scoresList = document.getElementById('scoresList');
         const item = document.createElement('li');
@@ -65,7 +69,7 @@ export default class LeaderBoard {
       },
       method,
       body: jsonBody !== null ? JSON.stringify(jsonBody) : String.empty,
-    }).then((res) => res.json().then((data) => data));
+    }).then((res) => res.json().then((data) => data)).catch(err=>err);
     return response;
   }
 }
