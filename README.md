@@ -18,7 +18,7 @@
 
 ## About <a name = "about"></a>
 
-LeaderBoard is a web based application that can be used to create game and add number of scores for every game. It is developed with ES6.
+The leaderBoard is a web-based application that can be used to create games and add several scores for every game. It is developed with ES6. This project encompasses API manipulation like HTTP Post and Get requests.
 
 <h3>Description <a name = "description"></a></h3>
 <h4>This project allows:</h4>
