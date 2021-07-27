@@ -7,6 +7,7 @@ export default class LeaderBoard {
     let tokenId = id.result.substring(id.result.indexOf(':'));
     tokenId = tokenId.substring(tokenId.lastIndexOf(':') + 1, tokenId.lastIndexOf(' '));
     this.id = tokenId;
+    console.log(this.id)
 
   }
 
@@ -16,14 +17,15 @@ export default class LeaderBoard {
 
   async createGame(name) {
     const gameName = { name };
-    const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games';
+    const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
     const response = await this.fetchApi(url, 'POST', gameName);
+    console.log(response)
     this.setId(response);
   }
 
   async displayScores() {
     if (this.id !== null) {
-      const scoresList = document.getElementById('scoresList');
+      const scoresList = document.getElementById('ulList');
       while (scoresList.firstChild) {
         scoresList.removeChild(scoresList.firstChild);
       }
@@ -41,8 +43,6 @@ export default class LeaderBoard {
 
   async addScore() {
     if (this.id !== null) {
-        this.id=''
-        console.log(this.id)
       const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${encodeURIComponent(this.id)}/scores/`;
       const newScore = {
         user: document.getElementById('name').value,
@@ -51,7 +51,7 @@ export default class LeaderBoard {
       const response = await this.fetchApi(url, 'POST', newScore);
       console.log(response)
       if (response.result === 'Leaderboard score created correctly.') {
-        const scoresList = document.getElementById('scoresList');
+        const scoresList = document.getElementById('ulList');
         const item = document.createElement('li');
         item.className = 'scoresList-items';
         item.id = 'scoresList-items';
@@ -66,6 +66,9 @@ export default class LeaderBoard {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
+        "Access-Control-Allow-Headers" : "Content-Type",
+        "Access-Control-Allow-Origin": "*",
+        'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
       },
       method,
       body: jsonBody !== null ? JSON.stringify(jsonBody) : String.empty,

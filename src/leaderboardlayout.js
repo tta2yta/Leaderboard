@@ -23,8 +23,11 @@ export default function leaderBoardLayour() {
   const listScores = document.createElement('div');
   listScores.className = 'list-scores';
   const ulList = document.createElement('ul');
+  ulList.id="ulList"
   scoresArray.forEach((element) => {
     const items = document.createElement('li');
+    items.id="scoresList-items"
+    items.className="scoresList-items"
     items.textContent = `${`${element.name}:${element.score}`}`;
     ulList.appendChild(items);
   });
