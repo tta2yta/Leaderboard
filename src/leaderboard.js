@@ -16,7 +16,7 @@ export default class LeaderBoard {
 
   async createGame(name) {
     const gameName = { name };
-    const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/gamess/';
+    const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
     const response = await this.fetchApi(url, 'POST', gameName);
     if (this.flag === false) {
       document.getElementById('errorDiv').textContent = 'Bad Request, Please Try Again!!!';
@@ -32,7 +32,7 @@ export default class LeaderBoard {
       while (scoresList.firstChild) {
         scoresList.removeChild(scoresList.firstChild);
       }
-      const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/apih/games/${encodeURIComponent(this.id)}/scores/`;
+      const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${encodeURIComponent(this.id)}/scores/`;
       const response = await this.fetchApi(url, 'GET');
       response.result.forEach((element) => {
         const item = document.createElement('li');
@@ -76,11 +76,11 @@ export default class LeaderBoard {
   async fetchApi(url, method, jsonBody = null) {
     const response = await fetch(url, {
       headers: {
-        Accept: 'application/json',
+        // Accept: 'application/json',
         'Content-Type': 'application/json',
         'Access-Control-Allow-Headers': 'Content-Type',
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST,PATCH,OPTIONS',
+        'Access-Control-Allow-Methods': 'POST,PATCH,OPTIONS,GET',
       },
       method,
       body: jsonBody !== null ? JSON.stringify(jsonBody) : String.empty,
