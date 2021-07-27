@@ -3,7 +3,7 @@ export default function leaderBoardLayour() {
     { name: 'CCC', score: 78 }, { name: 'DDD', score: 89 }, { name: 'EEE', score: 100 }];
  const errorDiv=document.createElement("div");
  errorDiv.id="errorDiv" ;
- errorDiv.className="errorDiv";    
+ errorDiv.className="errorDiv"; 
  const container = document.createElement('div');
   container.className = 'container';
   const leaderBoardHeader = document.createElement('h1');
@@ -62,11 +62,14 @@ export default function leaderBoardLayour() {
   submitBtn.type = 'button';
   submitBtn.id = 'addscorebtn';
   submitBtn.value = 'Submit';
+  const submitDivErr = document.createElement('div');
+  submitDivErr.className="submitDivErr";
   submitBtnDiv.appendChild(submitBtn);
   formAdd.appendChild(playerNameDiv);
   formAdd.appendChild(playerScoreDiv);
-  formAdd.appendChild(submitBtnDiv);
+  formAdd.appendChild(submitDivErr);
   formAddDiv.appendChild(formAdd);
+  formAddDiv.appendChild(submitBtnDiv);
   addScore.appendChild(addScoreHeader);
   addScore.appendChild(formAddDiv);
   leaderboard.appendChild(scores);

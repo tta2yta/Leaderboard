@@ -16,7 +16,7 @@ export default class LeaderBoard {
 
   async createGame(name) {
     const gameName = { name };
-    const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
+    const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/gamess/';
     const response = await this.fetchApi(url, 'POST', gameName);
     console.log(response)
     if(this.flag===false){
@@ -44,6 +44,15 @@ export default class LeaderBoard {
   }
 
   async addScore() {
+      const name= document.getElementById('name').value;
+      const score= document.getElementById('score').value;
+      if(name==='' || score===''){
+        document.querySelector('.submitDivErr').textContent="Please provide a value for game name and score";
+        setTimeout(function(){
+            document.querySelector(".submitDivErr").innerHTML = '';
+        }, 1500);
+        return false;
+      }
     if (this.id !== null) {
       const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${encodeURIComponent(this.id)}/scores/`;
       const newScore = {
