@@ -6,7 +6,7 @@ export default class LeaderBoard {
   async setId(id) {
     let tokenId = id.result.substring(id.result.indexOf(':'));
     tokenId = tokenId.substring(tokenId.lastIndexOf(':') + 1, tokenId.lastIndexOf(' '));
-    this.id = tokenId + "mm";
+    this.id = tokenId;
 
   }
 
