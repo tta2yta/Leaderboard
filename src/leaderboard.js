@@ -1,14 +1,13 @@
 export default class LeaderBoard {
   constructor() {
     this.id = null;
+    this.flag=true;
   }
 
   async setId(id) {
     let tokenId = id.result.substring(id.result.indexOf(':'));
     tokenId = tokenId.substring(tokenId.lastIndexOf(':') + 1, tokenId.lastIndexOf(' '));
-    this.id = tokenId;
-    console.log(this.id)
-
+    this.id = tokenId + "ppp";
   }
 
   getId() {
@@ -20,6 +19,9 @@ export default class LeaderBoard {
     const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
     const response = await this.fetchApi(url, 'POST', gameName);
     console.log(response)
+    if(this.flag===false){
+        alert("Bad Request, Please try again")
+    }else
     this.setId(response);
   }
 
@@ -49,7 +51,6 @@ export default class LeaderBoard {
         score: document.getElementById('score').value,
       };
       const response = await this.fetchApi(url, 'POST', newScore);
-      console.log(response)
       if (response.result === 'Leaderboard score created correctly.') {
         const scoresList = document.getElementById('ulList');
         const item = document.createElement('li');
@@ -72,7 +73,8 @@ export default class LeaderBoard {
       },
       method,
       body: jsonBody !== null ? JSON.stringify(jsonBody) : String.empty,
-    }).then((res) => res.json().then((data) => data)).catch(err=>err);
+    }).then((res) => res.json().then((data) => data)).then(err=>{this.flag=false}).
+    catch(err=>err);
     return response;
   }
 }
