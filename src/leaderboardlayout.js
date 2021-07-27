@@ -1,10 +1,14 @@
 export default function leaderBoardLayour() {
   const scoresArray = [{ name: 'AAA', score: 98 }, { name: 'BBB', score: 68 },
     { name: 'CCC', score: 78 }, { name: 'DDD', score: 89 }, { name: 'EEE', score: 100 }];
-  const container = document.createElement('div');
+ const errorDiv=document.createElement("div");
+ errorDiv.id="errorDiv" ;
+ errorDiv.className="errorDiv";    
+ const container = document.createElement('div');
   container.className = 'container';
   const leaderBoardHeader = document.createElement('h1');
   leaderBoardHeader.textContent = 'LeaderBoard';
+  container.appendChild(errorDiv);
   container.appendChild(leaderBoardHeader);
   const leaderboard = document.createElement('div');
   leaderboard.className = 'leaderboard';

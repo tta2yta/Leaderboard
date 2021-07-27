@@ -7,7 +7,7 @@ export default class LeaderBoard {
   async setId(id) {
     let tokenId = id.result.substring(id.result.indexOf(':'));
     tokenId = tokenId.substring(tokenId.lastIndexOf(':') + 1, tokenId.lastIndexOf(' '));
-    this.id = tokenId + "ppp";
+    this.id = tokenId;
   }
 
   getId() {
@@ -20,7 +20,7 @@ export default class LeaderBoard {
     const response = await this.fetchApi(url, 'POST', gameName);
     console.log(response)
     if(this.flag===false){
-        alert("Bad Request, Please try again")
+        document.getElementById('errorDiv').textContent="Bad Request, Please Try Again!!!";
     }else
     this.setId(response);
   }
@@ -73,8 +73,8 @@ export default class LeaderBoard {
       },
       method,
       body: jsonBody !== null ? JSON.stringify(jsonBody) : String.empty,
-    }).then((res) => res.json().then((data) => data)).then(err=>{this.flag=false}).
-    catch(err=>err);
+    }).then((res) => res.json().then((data) => data)).
+    catch(err=>{this.flag=false});
     return response;
   }
 }
