@@ -15,6 +15,7 @@ export default function leaderBoardLayour() {
   const recentScores = document.createElement('h2');
   recentScores.textContent = 'Recent scores';
   const refreshBtn = document.createElement('button');
+  refreshBtn.id="refreshbtn";
   refreshBtn.textContent = 'Refresh';
   refresh.appendChild(recentScores);
   refresh.appendChild(refreshBtn);
@@ -52,7 +53,7 @@ export default function leaderBoardLayour() {
   const submitBtnDiv = document.createElement('div');
   const submitBtn = document.createElement('input');
   submitBtn.type = 'button';
-  submitBtn.id = 'submit';
+  submitBtn.id = 'addscorebtn';
   submitBtn.value = 'Submit';
   submitBtnDiv.appendChild(submitBtn);
   formAdd.appendChild(playerNameDiv);

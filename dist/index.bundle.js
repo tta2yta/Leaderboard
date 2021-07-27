@@ -1,5 +1,4 @@
 /******/ (() => { // webpackBootstrap
-<<<<<<< HEAD
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/accepts/index.js":
@@ -247,7 +246,6 @@ function extToMime (type) {
 function validMime (type) {
   return typeof type === 'string'
 }
-=======
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
@@ -273,7 +271,6 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, ".container {\r\n  width: 70%;\r\n  margin: auto;\r\n  border: 1px solid red;\r\n  padding: 20px;\r\n}\r\n\r\n.leaderboard {\r\n  display: grid;\r\n  grid-template-columns: 60% 40%;\r\n}\r\n\r\n.refresh h2 {\r\n  display: inline;\r\n  margin-right: 10px;\r\n}\r\n\r\n.list-scores ul {\r\n  border: 1px solid black;\r\n  list-style-type: none;\r\n  width: 80%;\r\n  padding-left: 0;\r\n}\r\n\r\n.list-scores li:nth-child(odd) {\r\n  padding: 7px;\r\n  background-color: #fff;\r\n}\r\n\r\n.list-scores li:nth-child(even) {\r\n  padding: 7px;\r\n  background-color: rgb(207, 204, 204);\r\n}\r\n\r\n.add-score {\r\n  padding-right: 10px;\r\n}\r\n\r\n.add-score h2 {\r\n  margin-top: 0;\r\n}\r\n\r\n.form-add div {\r\n  margin-bottom: 30px;\r\n}\r\n\r\ninput[type=\"text\"] {\r\n  padding: 10px 0;\r\n  width: 100%;\r\n}\r\n\r\ninput[type=\"submit\"] {\r\n  float: right;\r\n  padding: 5px 15px;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,UAAU;EACV,YAAY;EACZ,qBAAqB;EACrB,aAAa;AACf;;AAEA;EACE,aAAa;EACb,8BAA8B;AAChC;;AAEA;EACE,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,uBAAuB;EACvB,qBAAqB;EACrB,UAAU;EACV,eAAe;AACjB;;AAEA;EACE,YAAY;EACZ,sBAAsB;AACxB;;AAEA;EACE,YAAY;EACZ,oCAAoC;AACtC;;AAEA;EACE,mBAAmB;AACrB;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,mBAAmB;AACrB;;AAEA;EACE,eAAe;EACf,WAAW;AACb;;AAEA;EACE,YAAY;EACZ,iBAAiB;AACnB","sourcesContent":[".container {\r\n  width: 70%;\r\n  margin: auto;\r\n  border: 1px solid red;\r\n  padding: 20px;\r\n}\r\n\r\n.leaderboard {\r\n  display: grid;\r\n  grid-template-columns: 60% 40%;\r\n}\r\n\r\n.refresh h2 {\r\n  display: inline;\r\n  margin-right: 10px;\r\n}\r\n\r\n.list-scores ul {\r\n  border: 1px solid black;\r\n  list-style-type: none;\r\n  width: 80%;\r\n  padding-left: 0;\r\n}\r\n\r\n.list-scores li:nth-child(odd) {\r\n  padding: 7px;\r\n  background-color: #fff;\r\n}\r\n\r\n.list-scores li:nth-child(even) {\r\n  padding: 7px;\r\n  background-color: rgb(207, 204, 204);\r\n}\r\n\r\n.add-score {\r\n  padding-right: 10px;\r\n}\r\n\r\n.add-score h2 {\r\n  margin-top: 0;\r\n}\r\n\r\n.form-add div {\r\n  margin-bottom: 30px;\r\n}\r\n\r\ninput[type=\"text\"] {\r\n  padding: 10px 0;\r\n  width: 100%;\r\n}\r\n\r\ninput[type=\"submit\"] {\r\n  float: right;\r\n  padding: 5px 15px;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
->>>>>>> develop
 
 
 /***/ }),
