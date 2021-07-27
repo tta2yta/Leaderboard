@@ -53,6 +53,8 @@ input[type="submit"] {
   float: right;
   padding: 5px 15px;
 }
-.errorDiv, .submitDivErr{
+
+.errorDiv,
+.submitDivErr {
   color: red;
 }

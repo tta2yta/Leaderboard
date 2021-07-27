@@ -1,10 +1,10 @@
 export default function leaderBoardLayour() {
   const scoresArray = [{ name: 'AAA', score: 98 }, { name: 'BBB', score: 68 },
     { name: 'CCC', score: 78 }, { name: 'DDD', score: 89 }, { name: 'EEE', score: 100 }];
- const errorDiv=document.createElement("div");
- errorDiv.id="errorDiv" ;
- errorDiv.className="errorDiv"; 
- const container = document.createElement('div');
+  const errorDiv = document.createElement('div');
+  errorDiv.id = 'errorDiv';
+  errorDiv.className = 'errorDiv';
+  const container = document.createElement('div');
   container.className = 'container';
   const leaderBoardHeader = document.createElement('h1');
   leaderBoardHeader.textContent = 'LeaderBoard';
@@ -19,7 +19,7 @@ export default function leaderBoardLayour() {
   const recentScores = document.createElement('h2');
   recentScores.textContent = 'Recent scores';
   const refreshBtn = document.createElement('button');
-  refreshBtn.id="refreshbtn";
+  refreshBtn.id = 'refreshbtn';
   refreshBtn.textContent = 'Refresh';
   refresh.appendChild(recentScores);
   refresh.appendChild(refreshBtn);
@@ -27,11 +27,11 @@ export default function leaderBoardLayour() {
   const listScores = document.createElement('div');
   listScores.className = 'list-scores';
   const ulList = document.createElement('ul');
-  ulList.id="ulList"
+  ulList.id = 'ulList';
   scoresArray.forEach((element) => {
     const items = document.createElement('li');
-    items.id="scoresList-items"
-    items.className="scoresList-items"
+    items.id = 'scoresList-items';
+    items.className = 'scoresList-items';
     items.textContent = `${`${element.name}:${element.score}`}`;
     ulList.appendChild(items);
   });
@@ -63,7 +63,7 @@ export default function leaderBoardLayour() {
   submitBtn.id = 'addscorebtn';
   submitBtn.value = 'Submit';
   const submitDivErr = document.createElement('div');
-  submitDivErr.className="submitDivErr";
+  submitDivErr.className = 'submitDivErr';
   submitBtnDiv.appendChild(submitBtn);
   formAdd.appendChild(playerNameDiv);
   formAdd.appendChild(playerScoreDiv);

@@ -2,7 +2,6 @@ import './style.css';
 import LeaderBoard from './leaderboard';
 import leaderBoardLayour from './leaderboardlayout';
 
-
 const layout = leaderBoardLayour();
 document.querySelector('.main').appendChild(layout);
 const game = new LeaderBoard();
@@ -19,6 +18,3 @@ document.getElementById('refreshbtn').addEventListener('click', () => {
 document.getElementById('addscorebtn').addEventListener('click', () => {
   game.addScore();
 }, false);
-
-
-
