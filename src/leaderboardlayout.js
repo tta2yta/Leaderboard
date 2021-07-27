@@ -25,7 +25,7 @@ export default function leaderBoardLayour(){
     scoresArray.forEach(element => {
         const items=document.createElement('li');
         items.textContent=`${element.name +':' + element.score}`;
-        listScores.appendChild(items);
+        ulList.appendChild(items);
     });
     listScores.appendChild(ulList);
     scores.appendChild(listScores)
@@ -37,19 +37,27 @@ export default function leaderBoardLayour(){
     const formAddDiv=document.createElement('div');
     formAddDiv.className="form-add";
     const formAdd=document.createElement('form');
+    const playerNameDiv=document.createElement('div')
     const playerName=document.createElement('input');
     playerName.type="text"
     playerName.id="name";
+    playerName.placeholder="Your name"
+    playerNameDiv.appendChild(playerName)
+    const playerScoreDiv=document.createElement('div')
     const playerScore=document.createElement('input');
-    playerName.type="text"
-    playerName.id="score";
+    playerScore.type="text"
+    playerScore.id="score";
+    playerScore.placeholder="Your score"
+    playerScoreDiv.appendChild(playerScore)
+    const submitBtnDiv=document.createElement('div')
     const submitBtn=document.createElement('input');
     submitBtn.type="button"
     submitBtn.id="submit";
     submitBtn.value="Submit";
-    formAdd.appendChild(playerName);
-    formAdd.appendChild(playerScore);
-    formAdd.appendChild(submitBtn);
+    submitBtnDiv.appendChild(submitBtn);
+    formAdd.appendChild(playerNameDiv);
+    formAdd.appendChild(playerScoreDiv);
+    formAdd.appendChild(submitBtnDiv);
     formAddDiv.appendChild(formAdd)
     addScore.appendChild(addScoreHeader);
     addScore.appendChild(formAddDiv);
