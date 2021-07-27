@@ -7,6 +7,7 @@ export default function leaderBoardLayour(){
     leaderBoardHeader.textContent="LeaderBoard"
     container.appendChild(leaderBoardHeader);
     const leaderboard=document.createElement('div');
+    leaderboard.className="leaderboard"
     const scores=document.createElement('div');
     scores.className="scores"
     const refresh=document.createElement('div');
@@ -17,13 +18,13 @@ export default function leaderBoardLayour(){
     refreshBtn.textContent="Refresh";
     refresh.appendChild(recentScores);
     refresh.appendChild(refreshBtn);
-    score.appendChild(refresh);
+    scores.appendChild(refresh);
     const listScores=document.createElement('div');
     listScores.className="list-scores";
     const ulList=document.createElement('ul');
     scoresArray.forEach(element => {
         const items=document.createElement('li');
-        items.textContent=`${scoresArray.name +':' + scoresArray.score}`;
+        items.textContent=`${element.name +':' + element.score}`;
         listScores.appendChild(items);
     });
     listScores.appendChild(ulList);

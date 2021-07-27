@@ -1,4 +1,7 @@
 import './style.css';
 import leaderBoardLayour from './leaderboardlayout';
 
-document.getElementById('main').appendChild(leaderBoardLayour);
+
+const layout=leaderBoardLayour();
+console.log(layout)
+document.querySelector('.main').appendChild(layout);

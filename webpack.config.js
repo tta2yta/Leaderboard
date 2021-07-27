@@ -5,6 +5,7 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
+    leaderBoardLayour:'./src/leaderboardlayout.js'
   },
   output: {
     filename: '[name].bundle.js',
