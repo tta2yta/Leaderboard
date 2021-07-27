@@ -21,6 +21,9 @@ export default class LeaderBoard {
     console.log(response)
     if(this.flag===false){
         document.getElementById('errorDiv').textContent="Bad Request, Please Try Again!!!";
+        setTimeout(function(){
+            document.getElementById("errorDiv").innerHTML = '';
+        }, 3500);
     }else
     this.setId(response);
   }
@@ -31,7 +34,7 @@ export default class LeaderBoard {
       while (scoresList.firstChild) {
         scoresList.removeChild(scoresList.firstChild);
       }
-      const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${encodeURIComponent(this.id)}/scores/`;
+      const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/apih/games/${encodeURIComponent(this.id)}/scores/`;
       const response = await this.fetchApi(url, 'GET');
       response.result.forEach((element) => {
         const item = document.createElement('li');
