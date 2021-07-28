@@ -1,10 +1,14 @@
-export default function leaderBoardLayour() {
+const leaderBoardLayour = () => {
   const scoresArray = [{ name: 'AAA', score: 98 }, { name: 'BBB', score: 68 },
     { name: 'CCC', score: 78 }, { name: 'DDD', score: 89 }, { name: 'EEE', score: 100 }];
+  const errorDiv = document.createElement('div');
+  errorDiv.id = 'errorDiv';
+  errorDiv.className = 'errorDiv';
   const container = document.createElement('div');
   container.className = 'container';
   const leaderBoardHeader = document.createElement('h1');
   leaderBoardHeader.textContent = 'LeaderBoard';
+  container.appendChild(errorDiv);
   container.appendChild(leaderBoardHeader);
   const leaderboard = document.createElement('div');
   leaderboard.className = 'leaderboard';
@@ -15,6 +19,7 @@ export default function leaderBoardLayour() {
   const recentScores = document.createElement('h2');
   recentScores.textContent = 'Recent scores';
   const refreshBtn = document.createElement('button');
+  refreshBtn.id = 'refreshbtn';
   refreshBtn.textContent = 'Refresh';
   refresh.appendChild(recentScores);
   refresh.appendChild(refreshBtn);
@@ -22,8 +27,11 @@ export default function leaderBoardLayour() {
   const listScores = document.createElement('div');
   listScores.className = 'list-scores';
   const ulList = document.createElement('ul');
+  ulList.id = 'ulList';
   scoresArray.forEach((element) => {
     const items = document.createElement('li');
+    items.id = 'scoresList-items';
+    items.className = 'scoresList-items';
     items.textContent = `${`${element.name}:${element.score}`}`;
     ulList.appendChild(items);
   });
@@ -52,17 +60,22 @@ export default function leaderBoardLayour() {
   const submitBtnDiv = document.createElement('div');
   const submitBtn = document.createElement('input');
   submitBtn.type = 'button';
-  submitBtn.id = 'submit';
+  submitBtn.id = 'addscorebtn';
   submitBtn.value = 'Submit';
+  const submitDivErr = document.createElement('div');
+  submitDivErr.className = 'submitDivErr';
   submitBtnDiv.appendChild(submitBtn);
   formAdd.appendChild(playerNameDiv);
   formAdd.appendChild(playerScoreDiv);
-  formAdd.appendChild(submitBtnDiv);
+  formAdd.appendChild(submitDivErr);
   formAddDiv.appendChild(formAdd);
+  formAddDiv.appendChild(submitBtnDiv);
   addScore.appendChild(addScoreHeader);
   addScore.appendChild(formAddDiv);
   leaderboard.appendChild(scores);
   leaderboard.appendChild(addScore);
   container.appendChild(leaderboard);
   return container;
-}
+};
+
+export default leaderBoardLayour;

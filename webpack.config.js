@@ -5,6 +5,7 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
+    leaderboard: './src/leaderboard.js',
     leaderBoardLayour: './src/leaderboardlayout.js',
   },
   output: {

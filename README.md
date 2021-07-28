@@ -22,11 +22,12 @@ The leaderBoard is a web-based application that can be used to create games and 
 
 <h3>Description <a name = "description"></a></h3>
 <h4>This project allows:</h4>
+<li>Create game name</li>
 <li>Refresh the list</li>
 <li>Add Scores  </li>
 
 ## 🔴 Live Demo <a name = "live"></a>
-**Click [here](https://rawcdn.githack.com/tta2yta/Leaderboard/6539b0f3817612d695b2c47d8e7776e0fafff679/dist/index.html) in order to see a Live Demo of this project.**
+**Click [here](https://rawcdn.githack.com/tta2yta/Leaderboard/5cdf0a4ec5c40f4cab64c5e565a9f14e45c9786f/dist/index.html) in order to see a Live Demo of this project.**
 
 
 ## 🔧 Built with<a name = "with"></a>
