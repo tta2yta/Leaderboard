@@ -58,3 +58,22 @@ input[type="submit"] {
 .submitDivErr {
   color: red;
 }
+
+@media (max-width:417px){
+  
+  .leaderboard {
+    display: flex;
+    flex-direction: column;
+  }
+  .list-scores ul {
+    width: 100%;
+  }
+}
+
+@media (min-width:1024px){
+
+  .container {
+    width: 700px;
+    margin: auto;
+  }
+}
