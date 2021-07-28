@@ -14,7 +14,7 @@ export default class LeaderBoard {
     return this.id;
   }
 
-  async createGame(name) {
+   createGame=async(name)=> {
     const gameName = { name };
     const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
     const response = await this.fetchApi(url, 'POST', gameName);
@@ -26,7 +26,7 @@ export default class LeaderBoard {
     } else { this.setId(response); }
   }
 
-  async displayScores() {
+   displayScores=async()=> {
     if (this.id !== null) {
       const scoresList = document.getElementById('ulList');
       while (scoresList.firstChild) {
@@ -44,7 +44,7 @@ export default class LeaderBoard {
     }
   }
 
-  async addScore() {
+   addScore=async()=> {
     const name = document.getElementById('name').value;
     const score = document.getElementById('score').value;
     if (name === '' || score === '') {
@@ -73,10 +73,9 @@ export default class LeaderBoard {
     return true;
   }
 
-  async fetchApi(url, method, jsonBody = null) {
+   fetchApi=async(url, method, jsonBody = null) =>{
     const response = await fetch(url, {
       headers: {
-        // Accept: 'application/json',
         'Content-Type': 'application/json',
         'Access-Control-Allow-Headers': 'Content-Type',
         'Access-Control-Allow-Origin': '*',

@@ -1,4 +1,4 @@
-export default function leaderBoardLayour() {
+export const leaderBoardLayour=()=> {
   const scoresArray = [{ name: 'AAA', score: 98 }, { name: 'BBB', score: 68 },
     { name: 'CCC', score: 78 }, { name: 'DDD', score: 89 }, { name: 'EEE', score: 100 }];
   const errorDiv = document.createElement('div');

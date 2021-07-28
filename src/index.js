@@ -1,6 +1,6 @@
 import './style.css';
 import LeaderBoard from './leaderboard';
-import leaderBoardLayour from './leaderboardlayout';
+import {leaderBoardLayour} from './leaderboardlayout';
 
 const layout = leaderBoardLayour();
 document.querySelector('.main').appendChild(layout);
