@@ -5,11 +5,11 @@
   margin-top: 100px;
   background-color: #fff0e0;
 }
-.container > h1 {
-margin-bottom: 30px;
-font-size: 40px;
-}
 
+.container > h1 {
+  margin-bottom: 30px;
+  font-size: 40px;
+}
 
 .leaderboard {
   display: grid;
@@ -64,25 +64,26 @@ input[type="submit"] {
 .submitDivErr {
   color: red;
 }
-#refreshbtn, input[type="button"]{
-background-color: #003580;
-color: wheat;
-border-radius: 10px;
+
+#refreshbtn,
+input[type="button"] {
+  background-color: #003580;
+  color: wheat;
+  border-radius: 10px;
 }
 
-@media (max-width:417px){
-  
+@media (max-width: 417px) {
   .leaderboard {
     display: flex;
     flex-direction: column;
   }
+
   .list-scores ul {
     width: 100%;
   }
 }
 
-@media (min-width:1024px){
-
+@media (min-width: 1024px) {
   .container {
     width: 700px;
     margin: auto;
