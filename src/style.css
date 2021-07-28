@@ -1,9 +1,15 @@
 .container {
   width: 70%;
   margin: auto;
-  border: 1px solid black;
   padding: 20px;
+  margin-top: 100px;
+  background-color: #fff0e0;
 }
+.container > h1 {
+margin-bottom: 30px;
+font-size: 40px;
+}
+
 
 .leaderboard {
   display: grid;
@@ -58,6 +64,11 @@ input[type="submit"] {
 .submitDivErr {
   color: red;
 }
+#refreshbtn, input[type="button"]{
+background-color: #003580;
+color: wheat;
+border-radius: 10px;
+}
 
 @media (max-width:417px){
   
@@ -75,5 +86,6 @@ input[type="submit"] {
   .container {
     width: 700px;
     margin: auto;
+    margin-top: 100px;
   }
 }
